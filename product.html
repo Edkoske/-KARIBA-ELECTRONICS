@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Kariba Electronics Kenya</title>
+    <meta name="description" content="View product details and enquire about electronics from Kariba Electronics in Kenya." />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="product">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="Kariba Electronics home page">
+          <span class="brand-mark">K</span>
+          <span>KARIBA ELECTRONICS</span>
+        </a>
+
+        <div class="nav-wrap">
+          <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#services">Services</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+
+          <div class="utility-bar">
+            <form class="search-field" id="searchForm" aria-label="Product search">
+              <span aria-hidden="true">⌕</span>
+              <input id="headerSearch" type="search" placeholder="Search" aria-label="Search products" />
+            </form>
+
+            <button class="icon-button nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+              ☰
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-banner">
+        <div class="container page-banner-inner">
+          <div>
+            <span class="eyebrow">Product details</span>
+            <h1>Featured item</h1>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div id="productDetail" aria-live="polite"></div>
+
+          <div class="related-products">
+            <div class="section-heading">
+              <span class="eyebrow">Related products</span>
+              <h2>More from this category</h2>
+            </div>
+            <div class="products-grid" id="relatedProducts"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">Kariba Electronics</div>
+          <p>Quality electronics and appliances that fit modern Kenyan homes and offices.</p>
+        </div>
+        <div>
+          <div class="footer-brand">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-brand">Categories</div>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?category=Audio%20%26%20Speakers">Audio</a></li>
+            <li><a href="shop.html?category=Laptops%20%26%20Computers">Computers</a></li>
+            <li><a href="shop.html?category=Kitchen%20Appliances">Kitchen</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-brand">Contact</div>
+          <ul class="footer-links">
+            <li>0729725614</li>
+            <li>info@karibaelectronics.co.ke</li>
+            <li>Kenya</li>
+            <li><a href="https://wa.me/254729725614" target="_blank" rel="noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">© 2026 Kariba Electronics. All Rights Reserved.</div>
+    </footer>
+
+    <a class="icon-button floating-whatsapp" href="https://wa.me/254729725614" target="_blank" rel="noreferrer" aria-label="Enquire on WhatsApp">💬</a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
