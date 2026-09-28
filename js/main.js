@@ -63,19 +63,42 @@ function renderFeaturedProducts() {
   container.innerHTML = featuredProducts.map(productCardTemplate).join('');
 }
 
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+}
+
+function safeImageUrl(value) {
+  try {
+    const url = new URL(value, window.location.href);
+    if (url.protocol === 'https:' || url.origin === window.location.origin) {
+      return escapeHTML(url.href);
+    }
+  } catch {
+    return '';
+  }
+
+  return '';
+}
+
 function renderCategoryCards() {
   const container = document.getElementById('categoryGrid');
   if (!container) return;
 
   container.innerHTML = (window.KARIBA_CATEGORIES || []).map((category) => `
     <article class="category-card">
-      <img src="${category.image}" alt="${category.name} products" loading="lazy" />
+      <img src="${safeImageUrl(category.image)}" alt="${escapeHTML(category.name)} products" loading="lazy" referrerpolicy="no-referrer" />
       <div class="content">
-        <h3>${category.name}</h3>
-        <p>${category.description}</p>
+        <h3>${escapeHTML(category.name)}</h3>
+        <p>${escapeHTML(category.description)}</p>
         <details class="category-items">
-          <summary>Browse ${category.items.length} product types</summary>
-          <ul>${category.items.map((item) => `<li>${item}</li>`).join('')}</ul>
+          <summary>Browse ${Number(category.items.length)} product types</summary>
+          <ul>${category.items.map((item) => `<li>${escapeHTML(item)}</li>`).join('')}</ul>
         </details>
         <a href="shop.html?category=${encodeURIComponent(category.name)}" class="btn secondary-btn">View Category</a>
       </div>
@@ -86,8 +109,9 @@ function renderCategoryCards() {
 function openWhatsAppEnquiry(productName, message = '') {
   const productText = message ? `${message}. ` : '';
   const details = `Hello Kariba Electronics, I am interested in ${productName}. ${productText}Please share availability, pricing and delivery details.`;
-  const url = `https://wa.me/${window.KARIBA_COMPANY.whatsappNumber}?text=${encodeURIComponent(details)}`;
-  window.open(url, '_blank');
+  const number = String(window.KARIBA_COMPANY.whatsappNumber).replace(/\D/g, '');
+  const url = `https://wa.me/${number}?text=${encodeURIComponent(details)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 function sendProductEmail(productName) {
@@ -134,13 +158,13 @@ function renderShopPage() {
 
   if (categoryLinks) {
     categoryLinks.innerHTML = categories.map((category) =>
-      `<a href="shop.html?category=${encodeURIComponent(category.name)}"><span>${category.name}</span></a>`
+      `<a href="shop.html?category=${encodeURIComponent(category.name)}"><span>${escapeHTML(category.name)}</span></a>`
     ).join('');
   }
 
   if (categoryFilter) {
     categoryFilter.innerHTML = ['All Categories', ...categories.map((category) => category.name)
-    ].map((category) => `<option value="${category}">${category}</option>`).join('');
+    ].map((category) => `<option value="${escapeHTML(category)}">${escapeHTML(category)}</option>`).join('');
     if (categoryParam) {
       categoryFilter.value = categoryParam;
     }
@@ -219,18 +243,18 @@ function renderProductDetailPage() {
   const buildDetailMarkup = () => `
     <div class="product-detail-wrap">
       <div class="product-gallery">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <img src="${safeImageUrl(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy" referrerpolicy="no-referrer">
       </div>
       <div class="product-info">
-        <div class="product-badge">${product.availability}</div>
-        <h1>${product.name}</h1>
+        <div class="product-badge">${escapeHTML(product.availability)}</div>
+        <h1>${escapeHTML(product.name)}</h1>
         <div class="rating-row">
           <span class="stars">${renderStars(product.rating)}</span>
           <span>${product.rating} / 5</span>
         </div>
-        <p class="product-description">${product.description}</p>
+        <p class="product-description">${escapeHTML(product.description)}</p>
         <ul class="spec-list">
-          ${Object.entries(product.specs).map(([key, value]) => `<li><span>${key}</span><span>${value}</span></li>`).join('')}
+          ${Object.entries(product.specs).map(([key, value]) => `<li><span>${escapeHTML(key)}</span><span>${escapeHTML(value)}</span></li>`).join('')}
         </ul>
         <div class="product-actions-group">
           <button class="btn primary-btn" id="enquireViaWhatsApp" type="button">Enquire on WhatsApp</button>
@@ -303,22 +327,22 @@ function setupContactPage() {
 
 function productCardTemplate(product) {
   return `
-    <article class="product-card" aria-label="${product.name}">
+    <article class="product-card" aria-label="${escapeHTML(product.name)}">
       <div class="product-image-wrap">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <img src="${safeImageUrl(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy" referrerpolicy="no-referrer">
       </div>
       <div class="product-body">
         <div class="product-meta">
-          <span>${product.category}</span>
+          <span>${escapeHTML(product.category)}</span>
           <span class="stars">${renderStars(product.rating)}</span>
         </div>
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
+        <h3>${escapeHTML(product.name)}</h3>
+        <p>${escapeHTML(product.description)}</p>
         <div class="product-actions">
-          <button class="btn primary-btn enquire-whatsapp" type="button" data-product-name="${product.name}">WhatsApp Enquiry</button>
-          <a href="${productEmailUrl(product.name)}" class="btn secondary-btn" target="_blank" rel="noopener">Gmail Enquiry</a>
+          <button class="btn primary-btn enquire-whatsapp" type="button" data-product-name="${escapeHTML(product.name)}">WhatsApp Enquiry</button>
+          <a href="${productEmailUrl(product.name)}" class="btn secondary-btn" target="_blank" rel="noopener noreferrer">Gmail Enquiry</a>
         </div>
-        <a href="product.html?id=${product.id}" class="product-detail-link">View product details</a>
+        <a href="product.html?id=${encodeURIComponent(String(product.id))}" class="product-detail-link">View product details</a>
       </div>
     </article>
   `;
