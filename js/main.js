@@ -63,6 +63,7 @@ function renderFeaturedProducts() {
   container.innerHTML = featuredProducts.map(productCardTemplate).join('');
 }
 
+
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
     '&': '&amp;',

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="home">
+    <div id="root"></div>
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand" aria-label="Kariba Electronics home page">
@@ -387,7 +388,7 @@
           </ul>
         </div>
       </div>
-      <div class="container footer-bottom">© 2026 Kariba Electronics. All Rights Reserved.</div>
+      <div class="container footer-legal"><a href="privacy.html">Privacy</a><a href="shipping-returns.html">Shipping & Returns</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQs</a><span>© 2026 Kariba Electronics</span></div>
     </footer>
 
     <a class="icon-button floating-whatsapp" href="https://wa.me/254729725614" target="_blank" rel="noopener noreferrer" aria-label="Enquire on WhatsApp">
@@ -397,6 +398,6 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="js/products.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

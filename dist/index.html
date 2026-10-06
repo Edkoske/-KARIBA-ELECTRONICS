@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; form-action 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; connect-src 'self'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Kariba Electronics Kenya | Quality Electronics & Appliances</title>
+    <meta name="description" content="Shop quality electronics, home appliances, accessories and smart devices at Kariba Electronics in Kenya." />
+    <meta name="keywords" content="Kariba Electronics, Kenya electronics, electronics shop, TVs, laptops, smartphones, appliances" />
+    <meta property="og:title" content="Kariba Electronics Kenya | Quality Electronics & Appliances" />
+    <meta property="og:description" content="Shop quality electronics, home appliances, accessories and smart devices at Kariba Electronics in Kenya." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <script type="module" crossorigin src="/assets/index-CZsFqcwZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DaSo6hdO.css">
+  </head>
+  <body data-page="home">
+    <div id="root"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="Kariba Electronics home page">
+          <span class="brand-mark">K</span>
+          <span>KARIBA ELECTRONICS</span>
+        </a>
+
+        <div class="nav-wrap">
+          <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="about.html">About Us</a>
+            <a href="#services">Services</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+
+          <div class="utility-bar">
+            <form class="search-field" id="searchForm" aria-label="Site search">
+              <span aria-hidden="true">⌕</span>
+              <input id="headerSearch" type="search" placeholder="Search products" aria-label="Search products" />
+            </form>
+
+            <button class="icon-button nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+              ☰
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow">Kenya-based electronics store</span>
+            <h1 id="hero-title">QUALITY ELECTRONICS. SMARTER LIVING.</h1>
+            <p>Shop quality electronics and accessories at Kariba Electronics, your trusted electronics store in Kenya.</p>
+            <div class="hero-actions">
+              <a href="shop.html" class="btn primary-btn">SHOP NOW</a>
+              <a href="#categories" class="btn secondary-btn">VIEW CATEGORIES</a>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-label="Quick store facts">
+            <div class="mini-stat">
+              <div>
+                <strong>4.9/5</strong>
+                <span>Customer trust</span>
+              </div>
+              <div>
+                <strong>1.5k+</strong>
+                <span>Products</span>
+              </div>
+            </div>
+            <div class="mini-stat">
+              <div>
+                <strong>Same day</strong>
+                <span>Dispatch</span>
+              </div>
+              <div>
+                <strong>Nationwide</strong>
+                <span>Delivery</span>
+              </div>
+            </div>
+            <div class="mini-stat">
+              <div>
+                <strong>Kenya</strong>
+                <span>Local service</span>
+              </div>
+              <div>
+                <strong>24/7</strong>
+                <span>Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-strip">
+        <div class="container trust-items">
+          <div class="trust-item"><span class="icon">✓</span><span>Quality Products</span></div>
+          <div class="trust-item"><span class="icon">✉</span><span>Ask for a Quote</span></div>
+          <div class="trust-item"><span class="icon">🚚</span><span>Fast Delivery</span></div>
+          <div class="trust-item"><span class="icon">☎</span><span>Customer Support</span></div>
+        </div>
+      </div>
+
+      <section id="categories">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Shop By Category</span>
+            <h2>Explore electronics for every need</h2>
+            <p>From entertainment and computing to home appliances, discover essential technology and everyday convenience.</p>
+          </div>
+
+          <div class="category-grid" id="categoryGrid"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Featured products</span>
+            <h2>Popular picks for modern homes</h2>
+            <p>Discover quality electronics and appliances selected for value, reliability and everyday usefulness.</p>
+          </div>
+          <div class="products-grid" id="featuredProducts"></div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Our Services</span>
+            <h2>Complete electronics support for customers in Kenya</h2>
+          </div>
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="icon">📺</div>
+              <h3>Electronics Sales</h3>
+              <p>Curated products for homes, offices and growing businesses looking for dependable electronics.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🔌</div>
+              <h3>Electronics Accessories</h3>
+              <p>Useful add-ons, charging products and everyday essentials that improve device performance.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🏠</div>
+              <h3>Home Appliance Solutions</h3>
+              <p>Reliable appliance recommendations and practical home upgrades for busy households.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🛠️</div>
+              <h3>Installation Support</h3>
+              <p>Assistance with setup guidance so customers can get the most from their products.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🚚</div>
+              <h3>Product Delivery</h3>
+              <p>Delivery support across Kenya with customer confirmation on availability and charges.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">⚙️</div>
+              <h3>Technical Support</h3>
+              <p>Basic troubleshooting and product guidance before and after purchase.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🧾</div>
+              <h3>Warranty Assistance</h3>
+              <p>Helpful guidance on product claims, support issues and maintenance questions.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">💬</div>
+              <h3>Consultation</h3>
+              <p>Expert product recommendations tailored to your usage, space and budget.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🛡️</div>
+              <h3>After-Sales Support</h3>
+              <p>Friendly follow-up and guidance to help customers make confident buying decisions.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Why choose us</span>
+            <h2>Built around convenience and trust</h2>
+          </div>
+          <div class="why-grid">
+            <article class="why-card">
+              <div class="icon">✅</div>
+              <h3>Genuine & Quality Products</h3>
+              <p>We focus on reliable products that meet customer expectations and daily household needs.</p>
+            </article>
+            <article class="why-card">
+              <div class="icon">💰</div>
+              <h3>Ask for a Quote</h3>
+              <p>Request current pricing and availability directly through WhatsApp or Gmail.</p>
+            </article>
+            <article class="why-card">
+              <div class="icon">🤝</div>
+              <h3>Trusted Customer Service</h3>
+              <p>Friendly guidance and clear communication for easier buying decisions and support.</p>
+            </article>
+            <article class="why-card">
+              <div class="icon">🛒</div>
+              <h3>Convenient Ordering</h3>
+              <p>Browse online, ask questions, and order directly through the website or WhatsApp.</p>
+            </article>
+            <article class="why-card">
+              <div class="icon">🚚</div>
+              <h3>Delivery Across Kenya</h3>
+              <p>Customers can contact us to confirm delivery availability, charges and expected timelines.</p>
+            </article>
+            <article class="why-card">
+              <div class="icon">🛠️</div>
+              <h3>After-Sales Support</h3>
+              <p>We remain available to help with product questions, guidance and post-purchase support.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="about-banner">
+            <div class="grid-2">
+              <div>
+                <span class="eyebrow">About Kariba Electronics</span>
+                <h2>Quality electronics for everyday life in Kenya</h2>
+              </div>
+              <div>
+                <p>Kariba Electronics is a Kenya-based electronics retail business committed to providing quality electronics, appliances and accessories at competitive prices. We aim to make technology and modern home appliances more accessible through convenient shopping and reliable customer service.</p>
+                <a href="about.html" class="btn ghost-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Delivery coverage</span>
+            <h2>DELIVERY ACROSS KENYA</h2>
+            <p>Customers can contact the business to confirm delivery availability, charges and estimated delivery times depending on their location.</p>
+          </div>
+
+          <div class="delivery-hero">
+            <div class="grid-2">
+              <div>
+                <h3>Coverage and delivery timelines</h3>
+                <p>Delivery coverage varies by location and stock availability. Please contact Kariba Electronics to confirm the service area, estimated time, and any applicable charges before placing an order.</p>
+              </div>
+              <div>
+                <div class="location-pills" aria-label="Locations served">
+                  <span>Nairobi</span>
+                  <span>Nakuru</span>
+                  <span>Eldoret</span>
+                  <span>Kisumu</span>
+                  <span>Kericho</span>
+                  <span>Bomet</span>
+                  <span>Mombasa</span>
+                  <span>Other parts of Kenya</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Demo testimonials</span>
+            <h2>Customer feedback</h2>
+          </div>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <span class="tag">DEMO</span>
+              <h3>Household upgrade</h3>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“The product selection was easy to navigate and the team was quick to answer questions about installation and delivery.”</p>
+            </article>
+            <article class="testimonial-card">
+              <span class="tag">DEMO</span>
+              <h3>Office setup</h3>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“We needed dependable tech for our office and Kariba Electronics made it simple to compare options and place our order.”</p>
+            </article>
+            <article class="testimonial-card">
+              <span class="tag">DEMO</span>
+              <h3>Home appliances</h3>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“The pricing was fair and the support felt professional. We appreciated the quick response and practical recommendations.”</p>
+            </article>
+            <article class="testimonial-card">
+              <span class="tag">DEMO</span>
+              <h3>Smart living</h3>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“The smart home products felt modern and easy to understand. Helpful follow-up made the whole process smoother.”</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container contact-grid">
+          <div class="contact-card">
+            <span class="eyebrow">Contact</span>
+            <h2>Speak with our team</h2>
+            <ul class="contact-list">
+              <li><span class="label">Phone:</span><span>0729725614</span></li>
+              <li><span class="label">WhatsApp:</span><span>0729725614</span></li>
+              <li><span class="label">Email:</span><span>info@karibaelectronics.co.ke</span></li>
+              <li><span class="label">Location:</span><span>Kenya</span></li>
+              <li><span class="label">Hours:</span><span>Monday – Saturday: 8:00 AM – 6:00 PM<br>Sunday: 10:00 AM – 4:00 PM</span></li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3>Send us a message</h3>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-field">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Your full name" />
+              </div>
+              <div class="form-field">
+                <label for="phoneNumber">Phone Number</label>
+                <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="0729725614" />
+              </div>
+              <div class="form-field">
+                <label for="emailAddress">Email</label>
+                <input id="emailAddress" name="emailAddress" type="email" placeholder="you@example.com" />
+              </div>
+              <div class="form-field">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" placeholder="Inquiry topic" />
+              </div>
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us what you need"></textarea>
+              </div>
+              <button class="btn primary-btn" type="submit">Submit</button>
+              <div class="form-success" id="formSuccess">Thank you. Your message has been captured for follow-up.</div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">Kariba Electronics</div>
+          <p>Reliable electronics, appliances and accessories for homes, offices and growing businesses in Kenya.</p>
+        </div>
+        <div>
+          <div class="footer-brand">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-brand">Categories</div>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=TV%20%26%20Entertainment">TV & Entertainment</a></li>
+            <li><a href="shop.html?category=Phones%20%26%20Tablets">Phones & Tablets</a></li>
+            <li><a href="shop.html?category=Computers">Computers</a></li>
+            <li><a href="shop.html?category=Home%20Appliances">Home Appliances</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-brand">Contact</div>
+          <ul class="footer-links">
+            <li>0729725614</li>
+            <li>info@karibaelectronics.co.ke</li>
+            <li>Kenya</li>
+            <li><a href="https://wa.me/254729725614" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">X</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-legal"><a href="privacy.html">Privacy</a><a href="shipping-returns.html">Shipping & Returns</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQs</a><span>© 2026 Kariba Electronics</span></div>
+    </footer>
+
+    <a class="icon-button floating-whatsapp" href="https://wa.me/254729725614" target="_blank" rel="noopener noreferrer" aria-label="Enquire on WhatsApp">
+      💬
+    </a>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/products.js"></script>
+  </body>
+</html>
